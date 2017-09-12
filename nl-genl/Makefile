@@ -2,7 +2,7 @@ CFLAGS += $(shell pkg-config --cflags libnl-genl-3.0)
 LDFLAGS += $(shell pkg-config --libs libnl-genl-3.0)
 
 list-80211: list-80211.o
-	$(CC) $(LDFLAGS) $< -o $@
+	$(CC) $< $(LDFLAGS) -o $@ 
 
 list-80211.o: list-80211.c
 	$(CC) $(CFLAGS) -c $< -o $@
